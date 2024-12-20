@@ -20,7 +20,7 @@
     </div>
 
     <!-- Cards grid -->
-    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6">
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 p-6">
       <div
           v-for="movie in movies"
           :key="movie.id"
@@ -33,13 +33,13 @@
               :alt="movie.title"
               class="w-full h-40 object-cover rounded-lg mb-4"
           />
-          <h2 class="text-lg font-semibold mb-2">{{ movie.title }}</h2>
+          <h2 class="text-lg font-semibold mb-1">{{ movie.title }}</h2>
           <p class="text-sm mb-2">{{ movie.description }}</p>
           <p class="text-sm text-gray-600 dark:text-gray-400">Año: {{ movie.year }}</p>
         </div>
 
         <!-- Botones de acción -->
-        <div class="flex justify-end gap-2 mt-4">
+        <div class="flex justify-end gap-2">
           <!-- Botón Editar -->
           <button
               @click="editMovie(movie.id)"
@@ -95,10 +95,6 @@
     </div>
   </div>
 </template>
-
-
-
-
 
 <script setup lang="ts">
 import {onMounted, ref} from 'vue';
