@@ -3,7 +3,7 @@ import MoviesListPage from '@/pages/movies/movies-list/MoviesListPage.vue'
 
 const routes = [
   //{ path: '/', redirect: '/movies-list' }, // Redirige la ruta raíz a /movies-list
-  { path: '/movies-list', component: MoviesListPage },
+  { path: '/', component: MoviesListPage },
   { path: '/:pathMatch(.*)*', redirect: '/' } // Redirige cualquier ruta no definida a /movies-list
 ]
 
