@@ -6,7 +6,7 @@ export interface IMovie {
     imageUrl: string
 }
 
-export type IMovieForm = Omit<IMovie, 'movieId'>; //Alternativa
+export type IMovieForm = Omit<IMovie, 'movieId'>; //Alternative
 /* export interface IMovieForm {
     title: string,
     description: string,
