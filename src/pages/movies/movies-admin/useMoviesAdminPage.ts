@@ -7,14 +7,14 @@ const useMoviesAdminPage = () => {
   /* Variables */
   const queryClient: QueryClient = useQueryClient();
   const search = ref('');
-  const headers = ref([
+  const headers: any = [
     {title: 'Código', key: 'movieId'},
     {title: 'Título', key: 'title'},
     {title: 'Descripción'},
     {title: 'Año', key: 'year'},
     {title: 'Imagen'},
     {title: 'Acciones', align: 'center'},
-  ]);
+  ];
 
   /* Methods */
   function useGetMovies() {

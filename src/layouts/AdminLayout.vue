@@ -11,7 +11,7 @@
         Regresar a películas
       </v-btn>
 
-<!--      <v-btn icon="mdi-magnify"></v-btn>-->
+<!--      yar-->
     </v-app-bar>
 
     <v-main>
