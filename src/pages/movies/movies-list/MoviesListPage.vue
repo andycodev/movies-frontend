@@ -53,8 +53,16 @@
     </v-carousel-item>
   </v-carousel>
 
+  <span v-if="isLoadingMovies">Cargando películas de movies-backend ...</span>
   <v-row dense>
-    <span v-if="isLoadingMovies">Cargando películas de movies-backend ...</span>
+    <template v-if="isLoadingMovies">
+      <v-col v-for="i in 4" cols="12" md="3">
+        <v-skeleton-loader
+          height="240"
+          type="image, list-item-two-line"
+        ></v-skeleton-loader>
+      </v-col>
+    </template>
     <template v-else>
       <v-col v-for="movie in movies" :key="movie.movieId" cols="12" md="3">
         <v-card class="pa-0 position-relative" color="#952175">
