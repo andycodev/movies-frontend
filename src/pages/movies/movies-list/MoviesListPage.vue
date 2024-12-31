@@ -13,8 +13,8 @@
       <v-card class="pa-0 position-relative" color="#952175">
         <!-- Imagen de fondo con overlay -->
         <v-img
-          :src="'https://picsum.photos/1920/1080?random=' + movie.movieId"
-          height="100%"
+          :src="movie.imageUrl"
+          height="auto"
           class="position-absolute top-0 left-0 right-0 bottom-0"
           :style="{ opacity: 0.7 }"
           cover
@@ -68,12 +68,19 @@
         <v-card class="pa-0 position-relative" color="#952175">
           <!-- Imagen de fondo con overlay -->
           <v-img
-            :src="'https://picsum.photos/1920/1080?random=' + movie.movieId"
+            :src="movie.imageUrl"
             height="100%"
             class="position-absolute top-0 left-0 right-0 bottom-0"
             :style="{ opacity: 0.7 }"
             cover
           ></v-img>
+<!--          <v-img
+            :src="'https://picsum.photos/1920/1080?random=' + movie.movieId"
+            height="100%"
+            class="position-absolute top-0 left-0 right-0 bottom-0"
+            :style="{ opacity: 0.7 }"
+            cover
+          ></v-img>-->
 
           <!-- Overlay oscuro -->
           <div class="position-absolute top-0 left-0 right-0 bottom-0" style="background: rgba(0, 0, 0, 0.5);"></div>

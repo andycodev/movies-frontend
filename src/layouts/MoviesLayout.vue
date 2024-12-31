@@ -1,13 +1,17 @@
 <template>
   <v-layout>
-    <v-app-bar color="black">
+    <v-app-bar color="black" app>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="d-none d-sm-block">Películas</v-toolbar-title>
+      <v-toolbar-title>Películas</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon="mdi-magnify"></v-btn>
+      <v-btn :to="{ path: '/admin' }" color="amber" variant="text">
+        Gestionar películas
+      </v-btn>
+
+<!--      <v-btn icon="mdi-magnify"></v-btn>-->
     </v-app-bar>
 
     <v-main>

@@ -8,46 +8,47 @@ const useMoviesListPage = () => {
 
   /* Methods */
   function useGetMovies() {
-    const { data, isLoading, refetch, isRefetching } = useQuery({
+    const {data, isLoading, refetch, isRefetching} = useQuery({
       queryKey: ['movies'],
       queryFn: () => getMoviesFn(),
       refetchOnWindowFocus: false,
     });
-    return { data, isLoading, refetch, isRefetching }
+    return {data, isLoading, refetch, isRefetching}
   }
 
   function useDeleteMovie() {
-    const { mutate, isPending, isSuccess } = useMutation({
+    const {mutate, isPending, isSuccess} = useMutation({
       mutationKey: ['delete-movie'],
       mutationFn: (movieId: number) => deleteMovieFn(movieId),
-      onSuccess: () => queryClient.refetchQueries({ queryKey: ['movies'] })
+      onSuccess: () => queryClient.refetchQueries({queryKey: ['movies']})
     });
-    return { mutate, isPending, isSuccess };
+    return {mutate, isPending, isSuccess};
   }
 
   const moviesCarousel = [
     {
-      "movieId": 1,
-      "title": "Matrix",
-      "description": "Un hacker descubre la verdadera naturaleza de su realidad...",
-      "year": 1999,
-      "imageUrl": "https://image.tmdb.org/t/p/w500/dVZdaXk4oPTv9rNh8WlR3dED5VJ.jpg"
+      movieId: 1,
+      title: "Inception",
+      description: "Un ladrón que roba secretos a través de sueños debe cumplir una misión imposible.",
+      year: 2010,
+      imageUrl: "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
     },
     {
-      "movieId": 2,
-      "title": "El Padrino",
-      "description": "El patriarca de una dinastía criminal transfiere el control a su hijo reticente.",
-      "year": 1972,
-      "imageUrl": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+      movieId: 2,
+      title: "Gladiator",
+      description: "Un general romano traicionado busca vengar la muerte de su familia y su emperador.",
+      year: 2000,
+      imageUrl: "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg"
     },
     {
-      "movieId": 3,
-      "title": "El Caballero Oscuro",
-      "description": "El Joker desata el caos en Gotham mientras Batman lucha por salvar la ciudad.",
-      "year": 2008,
-      "imageUrl": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+      movieId: 3,
+      title: "Parasite",
+      description: "Una familia se infiltra en el hogar de una familia rica con consecuencias inesperadas.",
+      year: 2019,
+      imageUrl: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
     }
-  ]
+  ];
+
 
   return {
     moviesCarousel,
