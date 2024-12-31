@@ -9,7 +9,7 @@
     show-arrows="hover"
     class="mb-4"
   >
-    <v-carousel-item v-for="movie in movies" :key="movie.movieId">
+    <v-carousel-item v-for="movie in moviesCarousel" :key="movie.movieId">
       <v-card class="pa-0 position-relative" color="#952175">
         <!-- Imagen de fondo con overlay -->
         <v-img
@@ -102,9 +102,14 @@
 <script setup lang="ts">
 import useMoviesListPage from "@/pages/movies/movies-list/useMoviesListPage";
 
-const { useGetMovies } = useMoviesListPage();
+const {moviesCarousel, useGetMovies} = useMoviesListPage();
 
-const { data: movies, isLoading: isLoadingMovies, refetch: refetchMovies, isRefetching: isRefetchingMovies } = useGetMovies();
+const {
+  data: movies,
+  isLoading: isLoadingMovies,
+  refetch: refetchMovies,
+  isRefetching: isRefetchingMovies
+} = useGetMovies();
 
 </script>
 
