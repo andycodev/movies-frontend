@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
 
       <v-btn :to="{ path: '/admin' }" color="amber" variant="text">
-        Gestionar películas
+        Administrar
       </v-btn>
 
 <!--      <v-btn icon="mdi-magnify"></v-btn>-->

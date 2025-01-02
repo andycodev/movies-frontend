@@ -1,23 +1,33 @@
 <template>
   <v-card flat>
-    <v-card-title class="d-flex align-center pe-2">
-      <v-icon icon="mdi-video"></v-icon> &nbsp;
-      Gestión de películas
-
-      <v-spacer></v-spacer>
-
-      <v-text-field
-        v-model="search"
-        density="compact"
-        label="Search"
-        prepend-inner-icon="mdi-magnify"
-        variant="solo-filled"
-        flat
-        hide-details
-        single-line
-      ></v-text-field>
+    <v-card-title>
+      <v-row justify="space-between" align="center">
+        <v-col cols="12" sm="8" class="mb-n5 mb-sm-0">
+          <div class="d-flex align-center">
+            <div>
+              <v-icon icon="mdi-video"></v-icon> &nbsp;
+            </div>
+            <div>
+              <p>Administrar</p>
+              <p class="text-grey text-caption">Agregar, editar y eliminar películas</p>
+            </div>
+          </div>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col cols="12" sm="4">
+          <v-text-field
+            v-model="search"
+            density="compact"
+            label="Search"
+            prepend-inner-icon="mdi-magnify"
+            variant="solo-filled"
+            flat
+            hide-details
+            single-line
+          ></v-text-field>
+        </v-col>
+      </v-row>
     </v-card-title>
-
     <v-divider></v-divider>
     <v-data-table
       :headers="headers"
@@ -30,10 +40,12 @@
         <tr>
           <td>{{ item.movieId }}</td>
           <td class="text-truncate">
-            <span class="ms-2 font-weight-medium">{{ item.title }}</span>
+            <span class="ms-2 font-weight-medium text-truncate">{{ item.title }}</span>
           </td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.year }}</td>
+          <td class="text-truncate">{{ item.description }}</td>
+          <td>
+            <v-chip color="amber" variant="flat">{{ item.year }}</v-chip>
+          </td>
           <td>
             <v-img
               :src="item.imageUrl"

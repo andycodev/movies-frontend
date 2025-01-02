@@ -3,12 +3,12 @@
     <v-app-bar color="black" app>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="d-none d-sm-block">Admin</v-toolbar-title>
+      <v-toolbar-title>Admin</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-btn :to="{ path: '/movies' }" color="amber" variant="text">
-        Regresar a películas
+        películas
       </v-btn>
 
 <!--      yar-->
